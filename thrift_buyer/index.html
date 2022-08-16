@@ -1,0 +1,719 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/boxicons.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/scripts.js"></script>
+    <style>
+        .nav-item h4 {
+            margin-top:10px;
+            position: relative;
+            cursor:pointer;
+        }
+        .nav-item h4:before{
+            content:attr(data-count);
+            position:absolute;
+            color:white;
+            right:1px;
+            font-size: 15px;
+            text-align:center;
+            top:-12px;
+            width:20px;
+            height:20px;
+            background:red;
+            border-radius: 50%;
+            opacity:0;
+        }
+
+        .nav-item h4.zero:before{
+            opacity:1;
+        }
+        .card-bodylink button{
+            background:red;
+            border:none;
+            outline:none;
+            font-weight: bold;
+            color:#fafafa;
+            cursor: pointer;
+        }
+        .card-bodylink span{
+            position:absolute;
+            top:14px;
+            left:13;
+            width:300px;
+            height:186px;
+            display:none;
+        }
+        .card-bodylink span img{
+            width:100%;
+            height: 100px;
+        }
+        section div:nth-child(1)>span.active{
+            animation: first 0.5s ease-in;
+            z-index: 2;
+            display:block;
+        }
+        section div:nth-child(2)>span.active{
+            animation: second 0.5s ease-in;
+            z-index: 2;
+            display:block;
+        }
+        section div:nth-child(3)>span.active{
+            animation: thrid 0.5s ease-in;
+            z-index: 2;
+            display:block;
+        }
+        section div:nth-child(4)>span.active{
+            animation: fourth 0.5s ease-in;
+            z-index: 2;
+            display:block;
+        }
+        section div:nth-child(5)>span.active{
+            animation: fifth 0.5s ease-in;
+            z-index: 2;
+            display:block;
+        }
+        section div:nth-child(6)>span.active{
+            animation: sixth 0.5s ease-in;
+            z-index: 2;
+            display:block;
+        }
+        @keyframes first{
+            to{
+                width:30px;
+                height:20px;
+                left:1290px;
+                top: -70px;
+            }
+        }
+            @keyframes seconf{
+            to{
+                width:30px;
+                height:20px;
+                left:1290px;
+                top: -70px;
+            }
+        }
+        @keyframes third{
+            to{
+                width:30px;
+                height:20px;
+                left:1290px;
+                top: -70px;
+            }
+        }
+        @keyframes fourth{
+            to{
+                width:30px;
+                height:20px;
+                left:1290px;
+                top: -70px;
+            }
+        }
+        @keyframes fifth{
+            to{
+                width:30px;
+                height:20px;
+                left:1290px;
+                top: -70px;
+            }
+        }
+        @keyframes sixth{
+            to{
+                width:30px;
+                height:20px;
+                left:1290px;
+                top: -70px;
+            }
+        }
+        .select{
+            width:60%;
+            height: 580px;
+            background:#222;
+            position:absolute;
+            top:-1000px;
+            left:20%;
+            transition:0.5s;
+            overflow-y:auto;
+            margin:auto;
+        }
+        .select .display{
+            top:10px;
+        }
+        .select div{
+            width:100%;
+            height:200px;
+            display:flex;
+            padding:5px;
+            border:1px solid white;
+            position:relative;
+            margin:5px auto;
+        }
+        .select div img{
+            width:300px;
+            height:100%;
+        }
+        .select div h5{
+            padding:0;
+        }
+        .select div h6{
+            padding:0;
+        }
+        .select div p{
+            padding:0;
+
+        }
+        .select div h6,
+        .select div button{
+            position:absolute;
+            left:45%;
+            top:50%;
+            color:white;
+        }
+        .select div button{
+            left:60%;
+            top:55%;
+        }
+            .select div span{    
+            display:none;
+
+
+        }
+
+    </style>
+    <title>Thrift Shop buyer</title>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70">
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg py-3 sticky-top navbar-light bg-white">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img class="logo" src="img/l1.png" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#product" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Product
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#men">Men's wear</a></li>
+                          <li><a class="dropdown-item" href="#women">Women's wear</a></li>
+
+                        </ul>
+                      </li>
+                      <li class="nav-item">
+                        <h4><a href="cart.html"><i class="fa fa-shopping-cart"></i></a></h4>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="order.html">Order</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#team">Team</a>
+                    </li>
+                </ul>
+                <div class="action">
+                    <div class="profile" onclick="menuToggle();">
+                        <img src="img/me.jpg">
+                    </div>
+                    <div class="menu">
+                        <h3>Username <br><span>Buyer</span></h3>
+                        <ul>
+                            <li><img src="img/profile-user.png"><a href="profile.html">My profile</a></li>
+                             <li class="nav-item dropdown"><img src="img/settings.png"><a class="nav-link dropdown-toggle" href="#setting" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                setting
+                              </a>
+                              <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="Reset_password.html"><img src="img/reload.png">Reset password</a></li>
+                                </ul>
+
+                            </li>
+                            <li><img src="img/logout.png"></i><a href="logout.html">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav><!-- //NAVBAR -->
+
+    <!-- HERO -->
+    <div class="hero vh-100 d-flex align-items-center" id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 mx-auto text-center">
+                    <h1 class="display-4 text-white">Thrift Shop Nepal Buyer Panel</h1>
+                    <p class="text-white my-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque quia
+                        sequi eius. Quas, totam aliquid. Repudiandae reiciendis vel excepturi ipsa voluptate dicta!</p>
+                    
+                </div>
+            </div>
+        </div>
+    </div><!-- //HERO -->
+
+
+    <!-- men's product -->
+    <div>
+        <center><h1>Products</h1></center>
+    </div>
+    <section id="men">
+        <div class="container-fluid">
+         <center> <h1>Men's Wear</h1></center> 
+         <div class="row g-3">
+            <div class="col-lg-4 col-sm-6">
+                    <div class="card" style="width: 18rem;">
+                        <img src="img/men_denim_jacket.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Denim Jacket</h5>
+                          <h6 class="card-price">Price:$20</h6>
+                          <p class="card-details">This is used for 1 years but in good condition.</p>
+                        </div>
+                        <div class="card-bodylink">
+                            <span></span>
+                          <button type="submit" name="cart_btn" class="btn btn-primary">Add to Cart</button>
+                         
+                        </div>
+                      </div>
+                </div>
+                <div class="col-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="img/men_jacket.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Denim Jacket</h5>
+                          <h6 class="card-title">Price:$20</h6>
+                          <p class="card-text">This is used for 1 years but in good condition.</p>
+                        </div>
+                        <div class="card-bodylink">
+                            <button type="submit" name="cart_btn" class="btn btn-primary">Add to Cart</button>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="img/men_coat2.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Denim Jacket</h5>
+                          <h6 class="card-title">Price:$20</h6>
+                          <p class="card-text">This is used for 1 years but in good condition.</p>
+                        </div>
+                        <div class="card-bodylink">
+                            <button type="submit" name="cart_btn" class="btn btn-primary">Add to Cart</button>
+                         
+                        </div>
+                      </div>
+                </div>
+                <div class="col-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="img/men_leatherjack.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Denim Jacket</h5>
+                          <h6 class="card-title">Price:$20</h6>
+                          <p class="card-text">This is used for 1 years but in good condition.</p>
+                        </div>
+                        <div class="card-bodylink">
+                            <button type="submit" name="cart_btn" class="btn btn-primary">Add to Cart</button>
+                         
+                        </div>
+                      </div>
+                </div>
+                <div class="col-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="img/men_long_coat.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Denim Jacket</h5>
+                          <h6 class="card-title">Price:$20</h6>
+                          <p class="card-text">This is used for 1 years but in good condition.</p>
+                        </div>
+                        <div class="card-bodylink">
+                          <button type="submit" name="cart_btn" class="btn btn-primary">Add to Cart</button>
+                         
+                        </div>
+                      </div>
+                </div>
+                <div class="col-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="img/men_jean_pant1.jpg" class="card-img-top" alt="width:50%">
+                        <div class="card-body">
+                          <h5 class="card-title">Denim Jacket</h5>
+                          <h6 class="card-title">Price:$20</h6>
+                          <p class="card-text">This is used for 1 years but in good condition.</p>
+                        </div>
+                        <div class="card-bodylink">
+                          <button type="submit" name="cart_btn" class="btn btn-primary">Add to Cart</button>
+                        
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+        </section>
+        
+    </section><!-- women's product -->
+    <section id="women">
+        <div class="container-fluid">
+         <center> <h1>Women's Wear</h1></center> 
+         <div class="row g-3">
+            <div class="col-lg-4 col-sm-6">
+                    <div class="card" style="width: 18rem;">
+                        <img src="img/wdenim2.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Denim jacket</h5>
+                          <h6 class="card-title">Price:$20</h6>
+                          <p class="card-text">This is used for 1 years but in good condition.</p>
+                        </div>
+                        <div class="card-bodylink">
+                          <button type="submit" name="cart_btn" class="btn btn-primary">Add to Cart</button>
+                          
+                        </div>
+                      </div>
+                </div>
+                <div class="col-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="img/wrippedjeans.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Ripped Jeans Pant</h5>
+                          <h6 class="card-title">Price:$20</h6>
+                          <p class="card-text">This is used for 1 years but in good condition.</p>
+                        </div>
+                        <div class="card-bodylink">
+                            <button type="submit" name="cart_btn" class="btn btn-primary">Add to Cart</button>
+                         
+                        </div>
+                      </div>
+                </div>
+                <div class="col-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="img/skirt.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Skirt</h5>
+                          <h6 class="card-title">Price:$20</h6>
+                          <p class="card-text">This is used for 1 years but in good condition.</p>
+                        </div>
+                        <div class="card-bodylink">
+                            <button type="submit" name="cart_btn" class="btn btn-primary">Add to Cart</button>
+                         
+                        </div>
+                      </div>
+                </div>
+                <div class="col-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="img/wleather2.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Leather Jacket</h5>
+                          <h6 class="card-title">Price:$20</h6>
+                          <p class="card-text">This is used for 1 years but in good condition.</p>
+                        </div>
+                        <div class="card-bodylink">
+                          <button type="submit" name="cart_btn" class="btn btn-primary">Add to Cart</button>
+                       
+                        </div>
+                      </div>
+                </div>
+                <div class="col-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="img/lehenga.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Denim Jacket</h5>
+                          <h6 class="card-title">Price:$20</h6>
+                          <p class="card-text">This is used for 1 years but in good condition.</p>
+                        </div>
+                        <div class="card-bodylink">
+                          <button type="submit" name="cart_btn" class="btn btn-primary">Add to Cart</button>
+                        
+                        </div>
+                      </div>
+                </div>
+                <div class="col-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="img/wlongleather.jpg" class="card-img-top" alt="width:50%">
+                        <div class="card-body">
+                          <h5 class="card-title">Long Leather Jacket</h5>
+                          <h6 class="card-title">Price:$30</h6>
+                          <p class="card-text">This is used for 1 years but in good condition.</p>
+                        </div>
+                        <div class="card-bodylink">
+                          <button type="submit" name="cart_btn" class="btn btn-primary">Add to Cart</button>
+                         
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- women's product -->
+    <div class="select">
+
+    </div>
+
+
+    <!-- About -->
+    <section class="row w-100 py-0 bg-light" id="about">
+        <div class="col-lg-6 col-img"></div>
+        <div class="col-lg-6 py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 offset-md-1">
+                        <h6 class="text-primary">ABOUT US</h6>
+                        <h1>Thrift Shop Nepal</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur nisi necessitatibus repellat distinctio eveniet eaque
+                            fuga
+                            in cumque optio consectetur harum vitae debitis sapiente praesentium aperiam aut</p>
+
+                        <div class="feature d-flex mt-5">
+                            <div class="iconbox me-3">
+                                <i class='bx bxs-comment-edit'></i>
+                            </div>
+                            <div>
+                                <h5>Product</h5>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil perspiciatis illo </p>
+                            </div>
+                        </div>
+                        <div class="feature d-flex">
+                            <div class="iconbox me-3">
+                                <i class='bx bxs-user-circle'></i>
+                            </div>
+                            <div>
+                                <h5>Cart</h5>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil perspiciatis illo </p>
+                            </div>
+                        </div>
+                        <div class="feature d-flex">
+                            <div class="iconbox me-3">
+                                <i class='bx bxs-download'></i>
+                            </div>
+                            <div>
+                                <h5>Order</h5>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil perspiciatis illo </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- About -->
+
+    
+    
+    <!-- TEAM -->
+    <section id="team">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md-8 mx-auto text-center">
+                    <h6 class="text-primary">TEAM</h6>
+                    <h1>Meet Our Crew Members</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur nisi necessitatibus repellat distinctio eveniet eaque fuga
+                        in cumque optio consectetur harum vitae debitis sapiente praesentium aperiam aut</p>
+                </div>
+            </div>
+            <div class="row text-center g-4">
+                <div class="col-lg-3 col-sm-6">
+                    <div class="team-member card-effect">
+                        <img src="img/me.jpg" alt="">
+                        <h5 class="mb-0 mt-4">Nirajan Thapa</h5>
+                        <p>Web Developer</p>
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com/profile.php?id=100055312209773"><i class='bx bxl-facebook'></i></a>
+                            <a href="#"><i class='bx bxl-twitter'></i></a>
+                            <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="team-member card-effect">
+                        <img src="img/aaju.jpg" alt="">
+                        <h5 class="mb-0 mt-4">Aaju Chandra Shrestha</h5>
+                        <p>Web Developer</p>
+                        <div class="social-icons">
+                            <a href="ttps://www.facebook.com/kaluaaju01"><i class='bx bxl-facebook'></i></a>
+                            <a href="#"><i class='bx bxl-twitter'></i></a>
+                            <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="team-member card-effect">
+                        <img src="img/aliz.jpg" alt="">
+                        <h5 class="mb-0 mt-4">Aliz Acharya</h5>
+                        <p>Web Developer</p>
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com/piqueprajwal03"><i class='bx bxl-facebook'></i></a>
+                            <a href="#"><i class='bx bxl-twitter'></i></a>
+                            <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="team-member card-effect">
+                        <img src="img/ishwor.jpg" alt="">
+                        <h5 class="mb-0 mt-4">Ishwor Dhakal</h5>
+                        <p>Web Developer</p>
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com/ishworrr"><i class='bx bxl-facebook'></i></a>
+                            <a href="#"><i class='bx bxl-twitter'></i></a>
+                            <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- TEAM -->
+
+   
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md-8 mx-auto text-center">
+                    <h6 class="text-primary">CONTACT</h6>
+                    <h1>Get In Touch</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur nisi necessitatibus repellat distinctio eveniet eaque fuga
+                        in cumque optio consectetur harum vitae debitis sapiente praesentium aperiam aut</p>
+                </div>
+            </div>
+
+            <form action="" class="row g-3 justify-content-center">
+                <div class="col-md-5">
+                    <input type="text" class="form-control" placeholder="Full Name">
+                </div>
+                <div class="col-md-5">
+                    <input type="text" class="form-control" placeholder="Enter E-mail">
+                </div>
+                <div class="col-md-10">
+                    <input type="text" class="form-control" placeholder="Enter Subject">
+                </div>
+                <div class="col-md-10">
+                    <textarea name="" id="" cols="30" rows="5" class="form-control"
+                        placeholder="Enter Message"></textarea>
+                </div>
+                <div class="col-md-10 d-grid">
+                    <button class="btn btn-primary">Contact</button>
+                </div>
+            </form>
+
+        </div>
+    </section><!-- CONTACT -->
+
+    <footer>
+        <div class="footer-top">
+            <div class="container">
+                <div class="row gy-4">
+                    <div class="col-lg-4">
+                        <img class="logo" src="img/logo-white.svg" alt="">
+                    </div>
+                    <div class="col-lg-2">
+                        <h5 class="text-white">Brand</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Features</a></li>
+                            <li><a href="#">Pricing</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2">
+                        <h5 class="text-white">More</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#">FAQ's</a></li>
+                            <li><a href="#">Privacy & Policy</a></li>
+                            <li><a href="#">Warranty</a></li>
+                            <li><a href="#">Shipment</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4">
+                        <h5 class="text-white">Contact</h5>
+                        <ul class="list-unstyled">
+                            <li>Address: 2715 Ash Dr. San Jose, South Dakota 83475</li>
+                            <li>Email: jackson.graham@example.com</li>
+                            <li>Phone: (603) 555-0123</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom py-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="mb-0">© 2020 copyright all right reserved | Designed with <i
+                            class="bx bx-heart text-danger"></i> by<a
+                                class="text-white">Thrift Shop Nepal</a></p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="social-icons">
+                            <a href="#"><i class='bx bxl-facebook'></i></a>
+                            <a href="#"><i class='bx bxl-twitter'></i></a>
+                            <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+        function menuToggle(){
+            const toggleMenu = document.querySelector('.menu');
+            toggleMenu.classList.toggle('active')
+        }
+    </script>
+    <script type="text/javascript">
+        var noti = document.querySelector('h4');
+        var select = document.querySelector('.select');
+        var button = document.getElementsByTagName('button');
+        for(but of button)
+        {
+            but.addEventListener('click', (e)=>{
+                var add = Number(noti.getAttribute('data-count')|| 0);
+                noti.setAttribute('data-count', add + 1);
+                noti.classList.add('zero');
+                //copy and paste//
+                var parent = e.target.parentNode;
+                var clone = parent.cloneNode(true);
+                select.appendChild(clone);
+                clone.lastElementChild.innerText = "Buy-now";
+                if(clone){
+                    noti.onclick =()=>{
+                        select.classList.toggle('display');
+                    }
+                }
+
+                //img//
+                var image = e.target.parentNode.querySelector('img');
+                var span = e.target.parentNode.querySelector('span');
+                var $_image = image.cloneNode(false);
+                span.appendChild(s_image);
+                span.classList.add('active');
+                setTimeout(() => {
+                    span.removeChild(s_image);
+                    span.classList.remove('active');
+                    
+                }, 500);
+            })
+        }
+
+    </script>
+
+</body>
+</html>

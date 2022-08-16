@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/boxicons.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Thrift Shop buyer</title>
+    <style>
+        .gateway{
+            width: 100vw;
+            min-height: 100hv;
+            background-color:#34495e;
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .payment{
+            background:white;
+            max-width: 900px;
+            min-height: 500px;
+            display: flex;
+            justify-content: space-between;
+            align-items:flex-start;
+            padding: 0.5rem 1.5rem;
+        }
+        .left{
+            flex-basis: 50%;
+        }
+        .right{
+            flex-basis: 50%;
+        }
+        form{
+            padding:1rem;
+        }
+        h3{
+            margin-top:1rem;
+            color:#2c3e50;
+        }
+        form img{
+            width:350px;
+            height:70px;
+        }
+        form input[type="text"]{
+            width:100%;
+            padding:0.5rem 0.7rem;
+            margin:0.5rem 0;
+            outline:none;
+        }
+        form input[type="date"]{
+            width:100%;
+            padding:0.5rem 0.7rem;
+            margin:0.5rem 0;
+            outline:none;
+        }
+        form input[type="email"]{
+            width:100%;
+            padding:0.5rem 0.7rem;
+            margin:0.5rem 0;
+            outline:none;
+        }
+        #address{
+            display: flex;
+            margin-top:0.5rem;
+        }
+        #address label{
+            padding:0.5rem;
+        }
+        #address select{
+            padding: 0.5rem 0.7rem;
+        }
+        #address input[type="number"]{
+            padding:0.5rem 0.7rem;
+            margin-left:5px;
+        }
+
+
+    </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70">
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg py-3 sticky-top navbar-light bg-white">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img class="logo" src="img/l1.png" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#product" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Product
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#men">Men's wear</a></li>
+                          <li><a class="dropdown-item" href="#women">Women's wear</a></li>
+
+                        </ul>
+                      </li>
+                      <li class="nav-item">
+                       <h4><a class="nav-link" href="cart.html"><i class="fa fa-shopping-cart"></i></a></h4>
+                    </li>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="order.html">Order</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#team">Team</a>
+                    </li>
+                </ul>
+                <div class="action">
+                    <div class="profile" onclick="menuToggle();">
+                        <img src="img/me.jpg">
+                    </div>
+                    <div class="menu">
+                        <h3>Username <br><span>Buyer</span></h3>
+                        <ul>
+                            <li><img src="img/profile-user.png"><a href="profile.html">My profile</a></li>
+                            <li><img src="img/edit.png"><a href="edit.html">Edit profile</a></li>
+                            <li><img src="img/settings.png"><a href="setting.html">Setting</a></li>
+                            <li><img src="img/logout.png"></i><a href="logout.html">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav><!-- //NAVBAR -->
+
+        <!-- HERO -->
+    <div class="hero vh-100 d-flex align-items-center" id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 mx-auto text-center">
+                    <h1 class="display-4 text-white">Thrift Shop Nepal Buyer Panel</h1>
+                    <p class="text-white my-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque quia
+                        sequi eius. Quas, totam aliquid. Repudiandae reiciendis vel excepturi ipsa voluptate dicta!</p>
+                    
+                </div>
+            </div>
+        </div>
+    </div><!-- //HERO -->
+    <!--payment gateway-->
+    <div class="gateway">
+        <div class="payment">
+            <div class="left">
+                <h3>Payment Address</h3>
+                <form>
+                    fullname
+                    <input type="text" class="" placeholder="Enter fullname" required>
+                    Email
+                    <input type="email" class="" placeholder="Enter Email" required>
+                    Address
+                    <input type="text" class="" placeholder="Enter Address" required>
+                    City
+                    <input type="text" class="" placeholder="Enter City" required>
+                    <div id="address">
+                        <label>
+                            Province
+                            <select>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                            </select>
+                        </label>
+                        <label>
+                            Zip Code
+                            <input type="number" name="" placeholder="Zip Code">
+                        </label>
+                    </div>
+                </form>
+            </div>
+            <div class="right">
+                <h3>Payment method</h3>
+                <form>
+                    Accepted Card
+                   <img src="img/visacard.png">
+                   
+                    Card Number
+                    <input type="email" class="" placeholder="Enter Card Number" required>
+                    Expiry date
+                    <input type="date" class="" placeholder="Enter date" required>
+                    CVV
+                    <input type="text" class="" placeholder="Enter CVV" required>
+                    
+                </form>
+            </div>
+        </div>
+        </div>
+    <!---payment gateway end-->
+
+
+    <!-- TEAM -->
+    <section id="team">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md-8 mx-auto text-center">
+                    <h6 class="text-primary">TEAM</h6>
+                    <h1>Meet Our Crew Members</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur nisi necessitatibus repellat distinctio eveniet eaque fuga
+                        in cumque optio consectetur harum vitae debitis sapiente praesentium aperiam aut</p>
+                </div>
+            </div>
+            <div class="row text-center g-4">
+                <div class="col-lg-3 col-sm-6">
+                    <div class="team-member card-effect">
+                        <img src="img/me.jpg" alt="">
+                        <h5 class="mb-0 mt-4">Nirajan Thapa</h5>
+                        <p>Web Developer</p>
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com/profile.php?id=100055312209773"><i class='bx bxl-facebook'></i></a>
+                            <a href="#"><i class='bx bxl-twitter'></i></a>
+                            <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="team-member card-effect">
+                        <img src="img/aaju.jpg" alt="">
+                        <h5 class="mb-0 mt-4">Aaju Chandra Shrestha</h5>
+                        <p>Web Developer</p>
+                        <div class="social-icons">
+                            <a href="ttps://www.facebook.com/kaluaaju01"><i class='bx bxl-facebook'></i></a>
+                            <a href="#"><i class='bx bxl-twitter'></i></a>
+                            <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="team-member card-effect">
+                        <img src="img/aliz.jpg" alt="">
+                        <h5 class="mb-0 mt-4">Aliz Acharya</h5>
+                        <p>Web Developer</p>
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com/piqueprajwal03"><i class='bx bxl-facebook'></i></a>
+                            <a href="#"><i class='bx bxl-twitter'></i></a>
+                            <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="team-member card-effect">
+                        <img src="img/ishwor.jpg" alt="">
+                        <h5 class="mb-0 mt-4">Ishwor Dhakal</h5>
+                        <p>Web Developer</p>
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com/ishworrr"><i class='bx bxl-facebook'></i></a>
+                            <a href="#"><i class='bx bxl-twitter'></i></a>
+                            <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- TEAM -->
+
+
+
+    <footer>
+        <div class="footer-top">
+            <div class="container">
+                <div class="row gy-4">
+                    <div class="col-lg-4">
+                        <img class="logo" src="img/l1.png" alt="">
+                    </div>
+                    <div class="col-lg-2">
+                        <h5 class="text-white">Brand</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Cart</a></li>
+                            <li><a href="#">Order</a></li>
+                            <li><a href="#">Profile</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2">
+                        <h5 class="text-white">More</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#">FAQ's</a></li>
+                            <li><a href="#">Privacy & Policy</a></li>
+                            <li><a href="#">Warranty</a></li>
+                            <li><a href="#">Shipment</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4">
+                        <h5 class="text-white">Contact</h5>
+                        <ul class="list-unstyled">
+                            <li>Address:Kathmandu,Nepal</li>
+                            <li>Email: Thriftshop.nepal7@gmail.com</li>
+                            <li>Phone: 9812345678</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom py-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="mb-0">© 2020 copyright all right reserved | Designed with <i
+                            class="bx bx-heart text-danger"></i> by<a
+                                href="https://www.youtube.com/channel/UCYMEEnLzGGGIpQQ3Nu_sBsQ"
+                                class="text-white">Thrift Shop</a></p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="social-icons">
+                            <a href="#"><i class='bx bxl-facebook'></i></a>
+                            <a href="#"><i class='bx bxl-twitter'></i></a>
+                            <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+        function menuToggle(){
+            const toggleMenu = document.querySelector('.menu');
+            toggleMenu.classList.toggle('active')
+        }
+    </script>
+</body>
+</html>
